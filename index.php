@@ -7,7 +7,7 @@ use Abraham\TwitterOAuth\TwitterOAuth;//twitter api
 //timer
 $nowt=time();
 $pret = file_get_contents('time.txt');
-if($nowt-$pret < 60*60*2){
+if($nowt-$pret < 10){
 exit;
 }else{
 $fp=fopen('time.txt',"w");
