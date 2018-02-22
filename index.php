@@ -4,6 +4,18 @@ require_once("php/phpQuery-onefile.php");//get website
 require "twitteroauth/autoload.php";//twitter api control
 use Abraham\TwitterOAuth\TwitterOAuth;//twitter api
 
+//timer
+$nowt=time();
+$pret = file_get_contents('time.txt');
+if($nowt-$pret < 60*60*2){
+exit;
+}else{
+$fp=fopen('time.txt',"w");
+fwrite($fp,$nowt);
+fclose($fp);
+}
+//
+
 $consumerKey = "XYZdi0idjIbQdUoxgfjDbTg4S";
 $consumerSecret = "xjBnoIWEQ0d3dxKkiotjxQPctseUqI1wU4Zi3V2sYie840iren";
 $accessToken = "931348000374267905-5s9XPcFogVpJiMJGlYpLv9obEZPeBf3";
